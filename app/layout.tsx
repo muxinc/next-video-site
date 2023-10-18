@@ -17,7 +17,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={clsx(dmSans.variable, jetBrainsMono.variable, 'font-sans bg-black text-white text-24')}>
+      <body
+        className={clsx(dmSans.variable, jetBrainsMono.variable, 'bg-black font-sans text-18 text-white antialiased')}
+        style={{ minWidth: '20rem' }}
+      >
         {children}
       </body>
     </html>
