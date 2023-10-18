@@ -8,18 +8,26 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      animation: {
+        'fade-in': 'fade-in 2s ease-in-out',
+      },
       backgroundSize: {
         20: '20px',
       },
-
       gridTemplateRows: {
         subgrid: 'subgrid',
+      },
+      keyframes: {
+        'fade-in': {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
       },
     },
     backgroundImage: {
       grid: 'url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjAgMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBkPSJNMCAwaDIwdjIwSDB6IiAvPgo8L3N2Zz4=")',
       'soft-light': 'linear-gradient(238deg, rgba(217, 217, 217, 0.10) 0%, rgba(217, 217, 217, 0.00) 100%)',
-      vignette: 'radial-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,0) 20%, rgba(0,0,0,1) 80%)',
+      vignette: 'radial-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,0) var(--vignette-midpoint, 20%), rgba(0,0,0,1) 75%)',
     },
     borderRadius: {
       4: '0.25rem',
@@ -32,8 +40,9 @@ const config: Config = {
         28: '#282828',
         30: '#303030',
         '5a': '#5a5a5a',
-        aa: '#aaaaaa',
+        a0: '#a0a0a0',
         a9: '#a9a9a9',
+        aa: '#aaaaaa',
       },
       white: '#fff',
       pink: {
@@ -81,7 +90,8 @@ const config: Config = {
       64: ['4rem', { lineHeight: '1.15' }],
     },
     fontWeight: {
-      bold: '800',
+      700: '700',
+      800: '800',
     },
     letterSpacing: {
       1: '0.01em',
@@ -89,6 +99,7 @@ const config: Config = {
     },
     lineHeight: {
       'rel-125': '1.125',
+      'rel-133': '1.33',
       'rel-156': '1.56',
       'rel-170': '1.17',
       'rel-750': '1.75',
