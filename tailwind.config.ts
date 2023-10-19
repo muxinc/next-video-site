@@ -26,7 +26,7 @@ const config: Config = {
     },
     backgroundImage: {
       grid: 'url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjAgMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBkPSJNMCAwaDIwdjIwSDB6IiAvPgo8L3N2Zz4=")',
-      'soft-light': 'linear-gradient(238deg, hsl(0,0%,8.5%), hsl(0,0%,0%))',
+      'soft-light': 'linear-gradient(238deg, hsla(0,0%,8.5%,100%), hsla(0,0%,8.5%,0%))',
     },
     borderRadius: {
       4: '0.25rem',
