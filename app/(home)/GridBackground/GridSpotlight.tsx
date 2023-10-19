@@ -8,10 +8,11 @@ import throttle from 'just-throttle';
 import useSupportsHover from '@/app/_hooks/useSupportsHover';
 
 type Props = {
+  blur: number;
   xRange: number;
   yRange: number;
 };
-const Spotlight = ({ xRange, yRange }: Props) => {
+const Spotlight = ({ blur, xRange, yRange }: Props) => {
   const ref = useRef<HTMLDivElement>(null);
   const [{ x, y }, api] = useSpring(() => ({
     x: 0,
@@ -105,9 +106,10 @@ const Spotlight = ({ xRange, yRange }: Props) => {
   return (
     <animated.div
       ref={ref}
-      className="absolute inset-0 animate-fade-in bg-[--spotlight-color] bg-vignette transition-colors duration-[--spotlight-duration]"
+      className="absolute inset-0 animate-fade-in rounded-full bg-[--spotlight-color] transition-colors duration-[--spotlight-duration]"
       style={{
         transform: to([x, y], (x, y) => `translate3d(${x}%, ${y}%, 0)`),
+        filter: `blur(${blur}px)`,
       }}
     />
   );
