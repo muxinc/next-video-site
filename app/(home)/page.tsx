@@ -148,7 +148,7 @@ export default function Page() {
           >
             Documentation
           </Link>
-          <GridBackground inset="100" />
+          <GridBackground inset="100" midpoint={20} xRange={20} yRange={25} />
         </div>
       </section>
       <section className="mx-auto max-w-1180">
@@ -171,13 +171,13 @@ export default function Page() {
           ))}
         </ul>
       </section>
-      <section className="mx-auto max-w-1180">
+      <section className="mx-auto max-w-1180" id="get-started">
         <header className="mb-60 mt-120 text-center md:mb-80 md:mt-200">
           <h2 className="text-center text-32 font-800 -tracking-2 supports-clamp:text-clamp-h2">
             {data.getStartedTitle}
           </h2>
         </header>
-        <div className="grid gap-x-20 md:grid-flow-col md:grid-cols-2 md:grid-rows-[auto_auto]">
+        <div className="grid grid-cols-1 gap-x-20 md:grid-flow-col md:grid-cols-2 md:grid-rows-[auto_auto]">
           <h3 className="mb-15 text-center text-18 font-800 -tracking-2 supports-clamp:text-clamp-sub md:mb-40 md:leading-1167">
             {data.getStartedVideoTitle}
           </h3>
@@ -187,7 +187,7 @@ export default function Page() {
           <h3 className="mb-15 text-center text-18 font-800 -tracking-2 supports-clamp:text-clamp-sub md:mb-40 md:leading-1167">
             {data.getStartedCodeTitle}
           </h3>
-          <div className="rounded-20 border border-gray-28 bg-soft-light p-40 backdrop-blur">
+          <div className="rounded-20 border border-gray-28 bg-soft-light p-15 pb-40 backdrop-blur sm:p-40 md:p-15 md:pb-40 lg:p-40">
             <pre className="relative mb-30 overflow-hidden rounded-4 border border-gray-30 bg-black font-mono text-16 leading-1750">
               {/* Line numbers */}
               <div className="absolute left-0 top-0 flex h-full w-30 flex-col items-center border-r border-gray-30 bg-black py-20">
@@ -208,9 +208,9 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="relative my-120 md:my-200">
-        <GridBackground inset="150" midpoint={35} />
-        <div className="mx-auto flex max-w-980 flex-col items-center gap-100 rounded-20 bg-black px-100 py-60 md:flex-row">
+      <section className="relative mx-auto my-120 max-w-980 md:my-200">
+        <GridBackground inset="150" midpoint={35} xRange={20} yRange={10} />
+        <div className="flex flex-col items-center gap-100 rounded-20 bg-black px-100 py-60 md:flex-row">
           <div>
             <h2 className="mb-30 text-center text-32 font-800 -tracking-2 supports-clamp:text-clamp-h2-alt md:text-left">
               {data.infrastructureTitle}
