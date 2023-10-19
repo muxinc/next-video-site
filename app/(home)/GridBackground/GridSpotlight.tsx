@@ -72,7 +72,7 @@ const Spotlight = () => {
   return (
     <animated.div
       ref={ref}
-      className="transition-color absolute inset-0 animate-fade-in bg-[--spotlight] bg-vignette duration-500"
+      className="absolute inset-0 animate-fade-in bg-[--spotlight-color] bg-vignette transition-colors duration-[--spotlight-duration]"
       style={props}
     />
   );

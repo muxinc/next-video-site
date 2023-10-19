@@ -14,7 +14,7 @@ function getWebHost() {
     return new URL(`http://localhost:${process.env.PORT || 3000}`);
   } else if (process.env.VERCEL_ENV === 'preview') {
     return new URL(`https://${process.env.VERCEL_URL}`);
-  } else if (process.env.SITE_URL) {
+  } else if (process.env.PRODUCTION_URL) {
     return new URL(`https://${process.env.PRODUCTION_URL}`);
   }
   return undefined;

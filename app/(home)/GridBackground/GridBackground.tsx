@@ -14,7 +14,9 @@ type Props = {
 const GridBackground = ({ inset, midpoint }: Props) => (
   <div
     className={clsx(
-      'absolute -z-10 [--spotlight:theme(colors.pink/20%)] peer-hover:[--spotlight:theme(colors.pink/30%)] peer-focus-visible:[--spotlight:theme(colors.pink/30%)]',
+      'absolute -z-10',
+      '[--spotlight-color:theme(colors.pink/20%)] peer-hover:[--spotlight-color:theme(colors.pink/30%)] peer-focus-visible:[--spotlight-color:theme(colors.pink/30%)]',
+      '[--spotlight-duration:1000ms] peer-hover:[--spotlight-duration:500ms] peer-focus-visible:[--spotlight-duration:500ms]',
       inset === '100' && '-inset-100',
       inset === '150' && '-inset-150'
     )}
