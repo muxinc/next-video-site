@@ -22,6 +22,7 @@ function getWebHost() {
 
 export const metadata: Metadata = {
   metadataBase: getWebHost(),
+  themeColor: 'black',
   title: 'next-video',
   description:
     'Next Video solves the hard problems with embedding, storing, streaming, and customizing video in your Next.js app.',
@@ -64,7 +65,7 @@ const data = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="overflow-x-hidden scroll-smooth">
       <body
         className={clsx(
           dmSans.variable,

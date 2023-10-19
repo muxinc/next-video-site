@@ -130,7 +130,7 @@ const data = {
 
 export default function Page() {
   return (
-    <main className="pt-50 md:pt-100">
+    <main className="pt-80 md:pt-100">
       <section className="mx-auto max-w-780 text-center">
         <NextPlusVideoLogo priority className="mx-auto mb-30 md:mb-60" />
         <h1 className="mb-30 text-32 font-800 -tracking-2 supports-clamp:text-clamp-h1">{data.heroTitle}</h1>
