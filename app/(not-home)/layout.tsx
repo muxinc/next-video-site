@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import nextVideo from '@/app/_images/next-video.svg';
+import nextVideo from 'app/_images/next-video.svg';
 
 type Props = {
   children: React.ReactNode;

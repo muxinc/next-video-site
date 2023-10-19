@@ -9,7 +9,19 @@ import './globals.css';
 const dmSans = DM_Sans({ subsets: ['latin'], variable: '--sans' });
 const jetBrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--mono' });
 
+function getWebHost() {
+  if (process.env.NODE_ENV === 'development') {
+    return new URL(`http://localhost:${process.env.PORT || 3000}`);
+  } else if (process.env.VERCEL_ENV === 'preview') {
+    return new URL(`https://${process.env.VERCEL_URL}`);
+  } else if (process.env.SITE_URL) {
+    return new URL(`https://${process.env.PRODUCTION_URL}`);
+  }
+  return undefined;
+}
+
 export const metadata: Metadata = {
+  metadataBase: getWebHost(),
   title: 'next-video',
   description:
     'Next Video solves the hard problems with embedding, storing, streaming, and customizing video in your Next.js app.',
@@ -57,20 +69,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         className={clsx(
           dmSans.variable,
           jetBrainsMono.variable,
-          'overflow-x-hidden bg-black px-20 font-sans text-18 text-white antialiased sm:px-40'
+          'overflow-x-hidden bg-black px-30 font-sans text-18 text-white antialiased sm:px-50'
         )}
         style={{ minWidth: '20rem' }}
       >
         {children}
-        <footer className="leading-rel-133 mx-auto mb-200 grid max-w-1180 grid-cols-1 gap-x-20 gap-y-80 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5">
+        <footer className="mx-auto mb-200 grid max-w-1180 grid-cols-1 gap-x-20 gap-y-60 text-center md:grid-cols-3 md:text-left xl:grid-cols-5">
           <p className="col-span-full whitespace-nowrap xl:col-span-2">{data.footerCallout}</p>
           {data.footerColumns.map((column, columnIdx) => (
             <div key={columnIdx}>
-              <h2 className="text-gray-a0 font-700 mb-40 font-mono text-16 uppercase tracking-1">{column.title}</h2>
+              <h2 className="leading-1500 font-700 text-gray-a0 mb-40 font-mono text-16 uppercase tracking-1">
+                {column.title}
+              </h2>
               <ul>
                 {column.items.map((item, itemIdx) => (
                   <li key={itemIdx} className="mb-10">
-                    <Link className="hover:underline focus:underline" href={item.href}>
+                    <Link className="leading-1330 hover:underline focus:underline" href={item.href}>
                       {item.text}
                     </Link>
                   </li>

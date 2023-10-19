@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 
 import { animated, config, useSpring } from '@react-spring/web';
+import throttle from 'just-throttle';
 
 const Spotlight = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -52,17 +53,24 @@ const Spotlight = () => {
       api.start({ x: xClamped * xRange, y: yClamped * yRange, config: config.molasses });
     };
 
-    window.addEventListener('resize', onResize);
-    window.addEventListener('mousemove', onMouseMove);
+    // because these actions are attached to springs,
+    // we can safely throttle them without affecting user experience
+    const throttledResize = throttle(onResize, 100, { leading: true });
+    const throttledMouseMove = throttle(onMouseMove, 100, { leading: true });
+
+    window.addEventListener('resize', throttledResize);
+    window.addEventListener('mousemove', throttledMouseMove);
 
     return () => {
-      window.removeEventListener('resize', onResize);
-      window.removeEventListener('mousemove', onMouseMove);
+      throttledResize.cancel();
+      throttledMouseMove.cancel();
+      window.removeEventListener('resize', throttledResize);
+      window.removeEventListener('mousemove', throttledMouseMove);
     };
   }, [api]);
 
   return (
-    <animated.div ref={ref} className="animate-fade-in absolute inset-0 bg-pink-dark-30 bg-vignette" style={props} />
+    <animated.div ref={ref} className="absolute inset-0 animate-fade-in bg-pink-dark-30 bg-vignette" style={props} />
   );
 };
 

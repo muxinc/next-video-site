@@ -1,0 +1,1 @@
+At the top, the Next.js logo alongside the next-video logo. Below that, a title: "Add high-performance video to your Next.js app". Finally, the text "next-video". In the background, a pink spotlight pierces the darkness to illuminate a subtle black grid.

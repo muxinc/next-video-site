@@ -48,6 +48,7 @@ const config: Config = {
       pink: {
         'dark-30': '#311023',
         DEFAULT: '#fa50b5',
+        neon: '#FB68EC',
       },
     },
     fontFamily: {
@@ -81,13 +82,27 @@ const config: Config = {
       ],
     },
     fontSize: {
-      16: ['1rem', { lineHeight: '2' }],
-      18: ['1.125rem', { lineHeight: '1.56' }],
-      21: ['1.3125rem', { lineHeight: '1.71' }],
+      16: ['1rem', { lineHeight: '1.5' }],
+      18: ['1.125rem', { lineHeight: '1.556' }],
+      21: ['1.3125rem', { lineHeight: '1.5' }],
       24: ['1.5rem', { lineHeight: '1.5' }],
+      32: ['2rem', { lineHeight: '1.15' }],
       36: ['2.25rem', { lineHeight: '1.15' }],
       48: ['3rem', { lineHeight: '1.15' }],
       64: ['4rem', { lineHeight: '1.15' }],
+      // generated with https://royalfig.github.io/fluid-typography-calculator/
+      'clamp-p': [
+        'clamp(1rem, 0.7917rem + 0.5208vw, 1.125rem)', // 16 -> 18
+        { lineHeight: 'clamp(1.5rem, 1.083rem + 1.0417vw, 1.75rem)' }, // 24 -> 28
+      ],
+      'clamp-sub-mono': ['clamp(1rem, 0.479rem + 1.302vw, 1.3125rem)', { lineHeight: '1.5' }], // 16 -> 21
+      'clamp-sub': [
+        'clamp(1.125rem, 0.5rem + 1.5625vw, 1.5rem)', // 18 -> 24
+        { lineHeight: 'clamp(1.75rem, 0.917rem + 2.083vw, 2.25rem);' }, // 28 -> 36
+      ],
+      'clamp-h1': ['clamp(2rem, -1.33rem + 8.33vw, 4rem)', { lineHeight: '1.15' }], // 32 -> 64
+      'clamp-h2': ['clamp(2rem, 0.33rem + 4.17vw, 3rem)', { lineHeight: '1.15' }], // 32 -> 48
+      'clamp-h2-alt': ['clamp(2rem, 1.583rem + 1.0417vw, 2.25rem);', { lineHeight: '1.15' }], // 32 -> 36
     },
     fontWeight: {
       700: '700',
@@ -98,11 +113,10 @@ const config: Config = {
       2: '0.02em',
     },
     lineHeight: {
-      'rel-125': '1.125',
-      'rel-133': '1.33',
-      'rel-156': '1.56',
-      'rel-170': '1.17',
-      'rel-750': '1.75',
+      '0': '0', // don't show space under video elements
+      '1167': '1.167', // small titles
+      '1330': '1.33', // footer items
+      '1750': '1.75', // code
     },
     maxWidth: {
       780: '48.75rem',
@@ -113,6 +127,7 @@ const config: Config = {
       0: '0',
       5: '0.3125rem',
       10: '0.625rem',
+      15: '0.9375rem',
       20: '1.25rem',
       30: '1.875rem',
       40: '2.5rem',
@@ -120,11 +135,13 @@ const config: Config = {
       60: '3.75rem',
       80: '5rem',
       100: '6.25rem',
+      120: '7.5rem',
       150: '9.375rem',
       200: '12.5rem',
     },
     supports: {
       subgrid: 'grid-template-rows: subgrid',
+      clamp: 'font-size: clamp(1rem, 2vw, 3rem)',
     },
   },
   plugins: [],
