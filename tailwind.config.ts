@@ -45,11 +45,7 @@ const config: Config = {
         aa: '#aaaaaa',
       },
       white: '#fff',
-      pink: {
-        'dark-30': '#311023',
-        DEFAULT: '#fa50b5',
-        neon: '#FB68EC',
-      },
+      pink: '#fa50b5',
     },
     fontFamily: {
       sans: [
@@ -95,14 +91,26 @@ const config: Config = {
         'clamp(1rem, 0.7917rem + 0.5208vw, 1.125rem)', // 16 -> 18
         { lineHeight: 'clamp(1.5rem, 1.083rem + 1.0417vw, 1.75rem)' }, // 24 -> 28
       ],
-      'clamp-sub-mono': ['clamp(1rem, 0.479rem + 1.302vw, 1.3125rem)', { lineHeight: '1.5' }], // 16 -> 21
+      'clamp-sub-mono': [
+        'clamp(1rem, 0.479rem + 1.302vw, 1.3125rem)', // 16 -> 21
+        { lineHeight: '1.5' },
+      ],
       'clamp-sub': [
         'clamp(1.125rem, 0.5rem + 1.5625vw, 1.5rem)', // 18 -> 24
         { lineHeight: 'clamp(1.75rem, 0.917rem + 2.083vw, 2.25rem);' }, // 28 -> 36
       ],
-      'clamp-h1': ['clamp(2rem, -1.33rem + 8.33vw, 4rem)', { lineHeight: '1.15' }], // 32 -> 64
-      'clamp-h2': ['clamp(2rem, 0.33rem + 4.17vw, 3rem)', { lineHeight: '1.15' }], // 32 -> 48
-      'clamp-h2-alt': ['clamp(2rem, 1.583rem + 1.0417vw, 2.25rem);', { lineHeight: '1.15' }], // 32 -> 36
+      'clamp-h1': [
+        'clamp(2rem, -1.33rem + 8.33vw, 4rem)', // 32 -> 64
+        { lineHeight: '1.15' },
+      ],
+      'clamp-h2': [
+        'clamp(2rem, 0.33rem + 4.17vw, 3rem)', // 32 -> 48
+        { lineHeight: '1.15' },
+      ],
+      'clamp-h2-alt': [
+        'clamp(2rem, 1.583rem + 1.0417vw, 2.25rem);', // 32 -> 36
+        { lineHeight: '1.15' },
+      ],
     },
     fontWeight: {
       700: '700',

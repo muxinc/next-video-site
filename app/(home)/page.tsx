@@ -27,7 +27,7 @@ const data = {
   heroTitle: 'Add high-performance video to your Next.js app',
   heroSub: (
     <>
-      <code className="leading-1750 supports-clamp:text-clamp-sub-mono rounded-4 bg-pink/25 px-10 font-mono text-16 text-pink">
+      <code className="rounded-4 bg-pink/25 px-10 font-mono text-16 leading-1750 text-pink supports-clamp:text-clamp-sub-mono">
         next-video
       </code>{' '}
       solves the hard problems with embedding, storing, streaming, and customizing video.
@@ -100,7 +100,7 @@ const data = {
   getStartedCodeDocs: (
     <>
       Or check out{' '}
-      <Link href="/docs" className="text-white underline hover:no-underline focus:no-underline">
+      <Link href="/docs" className="text-white underline hover:no-underline focus-visible:no-underline">
         the docs
       </Link>{' '}
       for manual configuration.
@@ -110,7 +110,7 @@ const data = {
   infrastructureText: (
     <>
       Plug in your own video infrastructure provider, or use the default provider,{' '}
-      <Link href="https://www.mux.com/" className="text-white underline hover:no-underline focus:no-underline">
+      <Link href="https://www.mux.com/" className="text-white underline hover:no-underline focus-visible:no-underline">
         Mux
       </Link>
       . Mux’s developer video tools are used on the largest streaming sites and live events in the world.
@@ -133,30 +133,30 @@ export default function Page() {
     <main className="pt-50 md:pt-100">
       <section className="mx-auto max-w-780 text-center">
         <NextPlusVideoLogo priority className="mx-auto mb-30 md:mb-60" />
-        <h1 className="font-800 text-32 supports-clamp:text-clamp-h1 mb-30 -tracking-2">{data.heroTitle}</h1>
-        <p className="supports-clamp:text-clamp-sub mb-10 text-18 md:mb-30">{data.heroSub}</p>
+        <h1 className="mb-30 text-32 font-800 -tracking-2 supports-clamp:text-clamp-h1">{data.heroTitle}</h1>
+        <p className="mb-10 text-18 supports-clamp:text-clamp-sub md:mb-30">{data.heroSub}</p>
         <div
-          className="gap-y-15 mb-120 relative grid w-full justify-center gap-x-20 py-50 font-mono text-16 uppercase tracking-1 md:mb-150"
+          className="relative mb-120 grid w-full justify-center gap-x-20 gap-y-15 py-50 font-mono text-16 uppercase tracking-1 md:mb-150"
           style={{ gridTemplateColumns: 'repeat(auto-fit, 18.75rem)' }}
         >
-          <GridBackground inset="100" />
-          <a href="#get-started" className="flex h-60 items-center justify-center rounded-full bg-pink text-black">
+          <a href="#get-started" className="peer flex h-60 items-center justify-center rounded-full bg-pink text-black">
             Get started
           </a>
           <Link
             href="./docs"
-            className="flex h-60 items-center justify-center rounded-full border border-white backdrop-blur"
+            className="peer flex h-60 items-center justify-center rounded-full border border-white backdrop-blur"
           >
             Documentation
           </Link>
+          <GridBackground inset="100" />
         </div>
       </section>
       <section className="mx-auto max-w-1180">
         <header className="mb-60 text-center md:mb-100">
-          <h2 className="font-800 text-32 supports-clamp:text-clamp-h2 text-center -tracking-2">
+          <h2 className="text-center text-32 font-800 -tracking-2 supports-clamp:text-clamp-h2">
             {data.featuresTitle}
           </h2>
-          <p className="supports-clamp:text-clamp-sub text-18 text-gray-a9">{data.featuresSub}</p>
+          <p className="text-18 text-gray-a9 supports-clamp:text-clamp-sub">{data.featuresSub}</p>
         </header>
         <ul className="grid gap-20" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(20rem, 1fr))' }}>
           {data.features.map((feature, featureIdx) => (
@@ -165,30 +165,30 @@ export default function Page() {
               className="row-span-3 grid grid-rows-subgrid rounded-20 border border-gray-28 bg-soft-light px-30 py-40"
             >
               <Image src={feature.icon} alt={feature.iconAlt} className="mb-20 supports-subgrid:mb-0" />
-              <h3 className="font-800 leading-1167 mb-20 text-24 -tracking-2 supports-subgrid:mb-0">{feature.title}</h3>
-              <p className="supports-clamp:text-clamp-p text-16 text-gray-aa">{feature.text}</p>
+              <h3 className="mb-20 text-24 font-800 leading-1167 -tracking-2 supports-subgrid:mb-0">{feature.title}</h3>
+              <p className="text-16 text-gray-aa supports-clamp:text-clamp-p">{feature.text}</p>
             </li>
           ))}
         </ul>
       </section>
       <section className="mx-auto max-w-1180">
-        <header className="mt-120 mb-60 text-center md:mb-80 md:mt-200">
-          <h2 className="font-800 text-32 supports-clamp:text-clamp-h2 text-center -tracking-2">
+        <header className="mb-60 mt-120 text-center md:mb-80 md:mt-200">
+          <h2 className="text-center text-32 font-800 -tracking-2 supports-clamp:text-clamp-h2">
             {data.getStartedTitle}
           </h2>
         </header>
         <div className="grid gap-x-20 md:grid-flow-col md:grid-cols-2 md:grid-rows-[auto_auto]">
-          <h3 className="font-800 md:leading-1167 mb-15 supports-clamp:text-clamp-sub text-center text-18 -tracking-2 md:mb-40">
+          <h3 className="mb-15 text-center text-18 font-800 -tracking-2 supports-clamp:text-clamp-sub md:mb-40 md:leading-1167">
             {data.getStartedVideoTitle}
           </h3>
-          <div className="leading-0 mb-60 md:mb-0">
+          <div className="mb-60 leading-0 md:mb-0">
             <Video src={data.getStartedVideo} accentColor="#fa50b5" className="overflow-hidden rounded-20" />
           </div>
-          <h3 className="font-800 md:leading-1167 mb-15 supports-clamp:text-clamp-sub text-center text-18 -tracking-2 md:mb-40">
+          <h3 className="mb-15 text-center text-18 font-800 -tracking-2 supports-clamp:text-clamp-sub md:mb-40 md:leading-1167">
             {data.getStartedCodeTitle}
           </h3>
           <div className="rounded-20 border border-gray-28 bg-soft-light p-40 backdrop-blur">
-            <pre className="leading-1750 relative mb-30 overflow-hidden rounded-4 border border-gray-30 bg-black font-mono text-16">
+            <pre className="relative mb-30 overflow-hidden rounded-4 border border-gray-30 bg-black font-mono text-16 leading-1750">
               {/* Line numbers */}
               <div className="absolute left-0 top-0 flex h-full w-30 flex-col items-center border-r border-gray-30 bg-black py-20">
                 {data.getStartedCode.map((_, idx) => (
@@ -208,11 +208,11 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="my-120 relative md:my-200">
+      <section className="relative my-120 md:my-200">
         <GridBackground inset="150" midpoint={35} />
         <div className="mx-auto flex max-w-980 flex-col items-center gap-100 rounded-20 bg-black px-100 py-60 md:flex-row">
           <div>
-            <h2 className="font-800 text-32 supports-clamp:text-clamp-h2-alt mb-30 text-center -tracking-2 md:text-left">
+            <h2 className="mb-30 text-center text-32 font-800 -tracking-2 supports-clamp:text-clamp-h2-alt md:text-left">
               {data.infrastructureTitle}
             </h2>
             <p className="text-center text-gray-aa md:text-left">{data.infrastructureText}</p>

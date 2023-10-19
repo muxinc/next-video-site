@@ -78,13 +78,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <p className="col-span-full whitespace-nowrap xl:col-span-2">{data.footerCallout}</p>
           {data.footerColumns.map((column, columnIdx) => (
             <div key={columnIdx}>
-              <h2 className="leading-1500 font-700 text-gray-a0 mb-40 font-mono text-16 uppercase tracking-1">
+              <h2 className="leading-1500 mb-40 font-mono text-16 font-700 uppercase tracking-1 text-gray-a0">
                 {column.title}
               </h2>
               <ul>
                 {column.items.map((item, itemIdx) => (
                   <li key={itemIdx} className="mb-10">
-                    <Link className="leading-1330 hover:underline focus:underline" href={item.href}>
+                    <Link className="leading-1330 hover:underline focus-visible:underline" href={item.href}>
                       {item.text}
                     </Link>
                   </li>

@@ -70,7 +70,11 @@ const Spotlight = () => {
   }, [api]);
 
   return (
-    <animated.div ref={ref} className="absolute inset-0 animate-fade-in bg-pink-dark-30 bg-vignette" style={props} />
+    <animated.div
+      ref={ref}
+      className="transition-color absolute inset-0 animate-fade-in bg-[--spotlight] bg-vignette duration-500"
+      style={props}
+    />
   );
 };
 

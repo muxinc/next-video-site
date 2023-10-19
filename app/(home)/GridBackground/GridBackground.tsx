@@ -13,7 +13,11 @@ type Props = {
 };
 const GridBackground = ({ inset, midpoint }: Props) => (
   <div
-    className={clsx('absolute -z-10', inset === '100' && '-inset-100', inset === '150' && '-inset-150')}
+    className={clsx(
+      'absolute -z-10 [--spotlight:theme(colors.pink/20%)] peer-hover:[--spotlight:theme(colors.pink/30%)] peer-focus-visible:[--spotlight:theme(colors.pink/30%)]',
+      inset === '100' && '-inset-100',
+      inset === '150' && '-inset-150'
+    )}
     style={
       {
         '--vignette-midpoint': midpoint ? `${midpoint}%` : undefined,
