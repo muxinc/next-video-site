@@ -162,7 +162,7 @@ export default function Page() {
           {data.features.map((feature, featureIdx) => (
             <li
               key={featureIdx}
-              className="row-span-3 grid grid-rows-subgrid rounded-20 border border-gray-28 bg-soft-light px-30 py-40"
+              className="row-span-3 rounded-20 border border-gray-28 bg-soft-light px-30 py-40 supports-subgrid:grid supports-subgrid:grid-rows-subgrid"
             >
               <Image src={feature.icon} alt={feature.iconAlt} className="mb-20 supports-subgrid:mb-0" />
               <h3 className="mb-20 text-24 font-800 leading-1167 -tracking-2 supports-subgrid:mb-0">{feature.title}</h3>
