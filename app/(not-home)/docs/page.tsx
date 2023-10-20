@@ -51,11 +51,31 @@ export default async function Readme() {
             source={markdown}
             components={{
               h1: () => null,
-              h2: ({ children }) => <h2 className="mb-40 mt-80 text-24 font-800 -tracking-2 md:text-32">{children}</h2>,
-              h3: ({ children }) => <h3 className="mb-20 mt-40 text-21 font-800 -tracking-2 md:text-24">{children}</h3>,
-              h4: ({ children }) => <h4 className="mb-20 text-18 font-800 -tracking-2 md:text-21">{children}</h4>,
-              h5: ({ children }) => <h5 className="mb-20 font-800 -tracking-2">{children}</h5>,
-              h6: ({ children }) => <h6 className="mb-20 italic">{children}</h6>,
+              h2: ({ children, id }) => (
+                <h2 id={id} className="mb-40 mt-80 text-24 font-800 -tracking-2 md:text-32">
+                  {children}
+                </h2>
+              ),
+              h3: ({ children, id }) => (
+                <h3 id={id} className="mb-20 mt-40 text-21 font-800 -tracking-2 md:text-24">
+                  {children}
+                </h3>
+              ),
+              h4: ({ children, id }) => (
+                <h4 id={id} className="mb-20 text-18 font-800 -tracking-2 md:text-21">
+                  {children}
+                </h4>
+              ),
+              h5: ({ children, id }) => (
+                <h5 id={id} className="mb-20 font-800 -tracking-2">
+                  {children}
+                </h5>
+              ),
+              h6: ({ children, id }) => (
+                <h6 id={id} className="mb-20 italic">
+                  {children}
+                </h6>
+              ),
               p: ({ children }) => <p className="mb-20 last:mb-0">{children}</p>,
               a: ({ children, href }) => (
                 <Link
