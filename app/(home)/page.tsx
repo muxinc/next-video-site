@@ -188,7 +188,7 @@ export default function Page() {
             {data.getStartedTitle}
           </h2>
         </header>
-        <div className="grid grid-cols-1 gap-x-20 gap-y-30 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-x-20 gap-y-15 md:grid-cols-2">
           <div className="overflow-hidden rounded-20 border border-gray-28 bg-soft-light backdrop-blur">
             <div className="leading-0">
               <Video src={data.getStartedVideo} accentColor="#fa50b5" />
@@ -200,13 +200,13 @@ export default function Page() {
               <p className="text-gray-aa">{data.getStartedVideoSub}</p>
             </div>
           </div>
-          <div className="relative rounded-20 border border-gray-28 bg-soft-light py-40 pl-60 pr-30 backdrop-blur lg:px-60">
+          <div className="relative rounded-20 border border-gray-28 bg-soft-light px-30 py-40 backdrop-blur lg:px-60">
             <ol style={{ counterReset: 'list' }} className="leading-2000 mb-30">
               {data.getStartedSteps.map((step, stepIdx) => (
-                <li key={stepIdx}>
+                <li key={stepIdx} className="mb-30 lg:mb-0">
                   <span
                     style={{ counterIncrement: 'list' }}
-                    className="absolute left-30 text-right font-700 text-gray-aa before:content-[counter(list)_'.']"
+                    className="absolute left-30 hidden text-right font-700 text-gray-aa before:content-[counter(list)_'.'] lg:inline-block"
                   />
                   <MDXRemote
                     source={step}
