@@ -67,12 +67,12 @@ const data = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="overflow-x-hidden scroll-smooth">
+    <html lang="en" className="overflow-x-clip scroll-smooth">
       <body
         className={clsx(
           dmSans.variable,
           jetBrainsMono.variable,
-          'overflow-x-hidden bg-black px-30 font-sans text-18 text-white antialiased sm:px-50'
+          'overflow-x-clip bg-black px-30 font-sans text-18 text-white antialiased sm:px-50'
         )}
         style={{ minWidth: '20rem' }}
       >

@@ -46,8 +46,35 @@ const config: Config = {
       },
       white: '#fff',
       pink: {
-        dark: '#451632',
+        25: '#451632',
+        neon: '#fb68ec',
         DEFAULT: '#fa50b5',
+        dark: '#b14886',
+      },
+      red: {
+        neon: '#ff5c38',
+        DEFAULT: '#ea3737',
+        dark: '#ba1704',
+      },
+      yellow: {
+        neon: '#ffdb08',
+        DEFAULT: '#ffb200',
+        dark: '#bd8209',
+      },
+      green: {
+        neon: '#1be349',
+        DEFAULT: '#00aa3c',
+        dark: '#00802d',
+      },
+      blue: {
+        neon: '#16a6ff',
+        DEFAULT: '#0072e3',
+        dark: '#004e9b',
+      },
+      purple: {
+        neon: '#cb75ff',
+        DEFAULT: '#ac39f2',
+        dark: '#7c32ab',
       },
     },
     fontFamily: {
@@ -132,12 +159,14 @@ const config: Config = {
       '2500': '2.5', // inline code in tall paragraph
     },
     maxWidth: {
+      700: '43.75rem',
       780: '48.75rem',
       980: '61.25rem',
       1180: '73.75rem',
     },
     spacing: {
       0: '0',
+      2: '0.125rem',
       4: '0.25rem',
       5: '0.3125rem',
       8: '0.5rem',

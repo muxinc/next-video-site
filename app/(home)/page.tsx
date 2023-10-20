@@ -18,6 +18,7 @@ import iconTimeline from 'app/(home)/_images/icon-timeline.svg';
 import logoBlob from 'app/(home)/_images/logo-blob.svg';
 import logoMux from 'app/(home)/_images/logo-mux-small.svg';
 import logoS3 from 'app/(home)/_images/logo-s3.svg';
+import theme from 'app/_code/theme';
 
 import placeholderVideo from 'videos/placeholder.mp4';
 
@@ -139,7 +140,7 @@ export default function Page() {
           components={{
             p: ({ children }) => <p className="mb-10 text-18 supports-clamp:text-clamp-sub md:mb-30">{children}</p>,
             code: ({ children }) => (
-              <code className="bg-pink-dark rounded-4 px-10 font-mono text-16 leading-1750 text-pink supports-clamp:text-clamp-sub-mono">
+              <code className="bg-pink-25 rounded-4 px-10 font-mono text-16 leading-1750 text-pink supports-clamp:text-clamp-sub-mono">
                 {children}
               </code>
             ),
@@ -232,7 +233,19 @@ export default function Page() {
                         </pre>
                       ),
                     }}
-                    options={{ mdxOptions: { rehypePlugins: [rehypePrettyCode] } }}
+                    options={{
+                      mdxOptions: {
+                        rehypePlugins: [
+                          [
+                            rehypePrettyCode,
+                            {
+                              theme,
+                              keepBackground: false,
+                            },
+                          ],
+                        ],
+                      },
+                    }}
                   />
                 </li>
               ))}
