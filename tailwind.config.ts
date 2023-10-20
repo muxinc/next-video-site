@@ -36,6 +36,7 @@ const config: Config = {
     colors: {
       black: '#000',
       gray: {
+        23: '#232323',
         28: '#282828',
         30: '#303030',
         '5a': '#5a5a5a',
@@ -44,7 +45,10 @@ const config: Config = {
         aa: '#aaaaaa',
       },
       white: '#fff',
-      pink: '#fa50b5',
+      pink: {
+        dark: '#451632',
+        DEFAULT: '#fa50b5',
+      },
     },
     fontFamily: {
       sans: [
@@ -124,6 +128,8 @@ const config: Config = {
       '1167': '1.167', // small titles
       '1330': '1.33', // footer items
       '1750': '1.75', // code
+      '2000': '2', // tall paragraph
+      '2500': '2.5', // inline code in tall paragraph
     },
     maxWidth: {
       780: '48.75rem',
@@ -132,7 +138,9 @@ const config: Config = {
     },
     spacing: {
       0: '0',
+      4: '0.25rem',
       5: '0.3125rem',
+      8: '0.5rem',
       10: '0.625rem',
       15: '0.9375rem',
       20: '1.25rem',

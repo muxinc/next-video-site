@@ -1,6 +1,10 @@
+import { MDXRemote } from 'next-mdx-remote/rsc';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
+
+import clsx from 'clsx';
+import rehypePrettyCode from 'rehype-pretty-code';
 
 import iconAdaptive from 'app/(home)/_images/icon-adaptive.svg';
 import iconAI from 'app/(home)/_images/icon-ai.svg';
@@ -23,16 +27,9 @@ import GridBackground from './GridBackground';
 const Video = dynamic(() => import('next-video'));
 const Popover = dynamic(() => import('./Popover'));
 
-const data = {
+export const data = {
   heroTitle: 'Add high-performance video to your Next.js app',
-  heroSub: (
-    <>
-      <code className="rounded-4 bg-pink/25 px-10 font-mono text-16 leading-1750 text-pink supports-clamp:text-clamp-sub-mono">
-        next-video
-      </code>{' '}
-      solves the hard problems with embedding, storing, streaming, and customizing video.
-    </>
-  ),
+  heroSub: '`next-video` solves the hard problems with embedding, storing, streaming, and customizing video.',
   featuresTitle: 'What’s included',
   featuresSub: 'Everything you need to stream video like a pro.',
   features: [
@@ -93,29 +90,32 @@ const data = {
   ],
   getStartedTitle: 'Get started fast',
   getStartedVideoTitle: 'Watch a quick overview',
+  getStartedVideoSub:
+    'Follow along as Darius Cepulis, Senior Experience Engineer at Mux, walks through the initial setup and potential pitfalls.',
   getStartedVideo: placeholderVideo,
-  getStartedCodeTitle: 'Start here for setup wizard',
-  getStartedCode: ['npm install next-video', 'npx next-video init'],
-  getStartedCodeLang: 'Bash',
-  getStartedCodeDocs: (
-    <>
-      Or check out{' '}
-      <Link href="/docs" className="text-white underline hover:no-underline focus-visible:no-underline">
-        the docs
-      </Link>{' '}
-      for manual configuration.
-    </>
-  ),
+  getStartedVideoMetadata: {
+    title: 'Intro to next-video',
+    description:
+      'Learn how Next Video solves the hard problems with embedding, storing, streaming, and customizing video in your Next.js app.',
+  },
+  getStartedSteps: [
+    '`npx next-video init` to install',
+    // todo: this step can be reduced once npx next-video sync --watch is added to the dev script automatically
+    '`npx next-video sync` to upload videos from your `/videos` folder',
+    `Add the component to your app
+\`\`\`jsx
+import Video from 'next-video';
+import myVideo from '/videos/myVideo.mp4'; 
+
+export default function Page() { 
+   return <Video src={myVideo} />;
+}
+\`\`\``,
+  ],
+  getStartedCodeDocs: 'Or check out [the docs](/docs) for manual configuration.',
   infrastructureTitle: 'Built on high-performance video streaming infrastructure',
-  infrastructureText: (
-    <>
-      Plug in your own video infrastructure provider, or use the default provider,{' '}
-      <Link href="https://www.mux.com/" className="text-white underline hover:no-underline focus-visible:no-underline">
-        Mux
-      </Link>
-      . Mux’s developer video tools are used on the largest streaming sites and live events in the world.
-    </>
-  ),
+  infrastructureText:
+    'Plug in your own video infrastructure provider, or use the default provider, [Mux](https://www.mux.com/). Mux’s developer video tools are used on the largest streaming sites and live events in the world.',
   infrastructureLogos: [
     { logo: logoMux, title: 'Mux', href: 'https://www.mux.com/' },
     {
@@ -134,7 +134,17 @@ export default function Page() {
       <section className="mx-auto max-w-780 text-center">
         <NextPlusVideoLogo priority className="mx-auto mb-30 md:mb-60" />
         <h1 className="mb-30 text-32 font-800 -tracking-2 supports-clamp:text-clamp-h1">{data.heroTitle}</h1>
-        <p className="mb-10 text-18 supports-clamp:text-clamp-sub md:mb-30">{data.heroSub}</p>
+        <MDXRemote
+          source={data.heroSub}
+          components={{
+            p: ({ children }) => <p className="mb-10 text-18 supports-clamp:text-clamp-sub md:mb-30">{children}</p>,
+            code: ({ children }) => (
+              <code className="bg-pink-dark rounded-4 px-10 font-mono text-16 leading-1750 text-pink supports-clamp:text-clamp-sub-mono">
+                {children}
+              </code>
+            ),
+          }}
+        />
         <div
           className="relative mb-120 grid w-full justify-center gap-x-20 gap-y-15 py-50 font-mono text-16 uppercase tracking-1 md:mb-150"
           style={{ gridTemplateColumns: 'repeat(auto-fit, 18.75rem)' }}
@@ -177,34 +187,70 @@ export default function Page() {
             {data.getStartedTitle}
           </h2>
         </header>
-        <div className="grid grid-cols-1 gap-x-20 md:grid-flow-col md:grid-cols-2 md:grid-rows-[auto_auto]">
-          <h3 className="mb-15 text-center text-18 font-800 -tracking-2 supports-clamp:text-clamp-sub md:mb-40 md:leading-1167">
-            {data.getStartedVideoTitle}
-          </h3>
-          <div className="mb-60 leading-0 md:mb-0">
-            <Video src={data.getStartedVideo} accentColor="#fa50b5" className="overflow-hidden rounded-20" />
+        <div className="grid grid-cols-1 gap-x-20 gap-y-30 md:grid-cols-2">
+          <div className="overflow-hidden rounded-20 border border-gray-28 bg-soft-light backdrop-blur">
+            <div className="leading-0">
+              <Video src={data.getStartedVideo} accentColor="#fa50b5" />
+            </div>
+            <div className="p-30">
+              <h3 className="mb-10 text-18 font-800 -tracking-2 supports-clamp:text-clamp-sub">
+                {data.getStartedVideoTitle}
+              </h3>
+              <p className="text-gray-aa">{data.getStartedVideoSub}</p>
+            </div>
           </div>
-          <h3 className="mb-15 text-center text-18 font-800 -tracking-2 supports-clamp:text-clamp-sub md:mb-40 md:leading-1167">
-            {data.getStartedCodeTitle}
-          </h3>
-          <div className="rounded-20 border border-gray-28 bg-soft-light p-15 pb-40 backdrop-blur sm:p-40 md:p-15 md:pb-40 lg:p-40">
-            <pre className="relative mb-30 overflow-hidden rounded-4 border border-gray-30 bg-black font-mono text-16 leading-1750">
-              {/* Line numbers */}
-              <div className="absolute left-0 top-0 flex h-full w-30 flex-col items-center border-r border-gray-30 bg-black py-20">
-                {data.getStartedCode.map((_, idx) => (
-                  <div key={idx} className="text-right text-gray-30">
-                    {'>'}
-                  </div>
-                ))}
-              </div>
-              {/* Code */}
-              <div className="ml-30 overflow-x-scroll p-20 pb-80">
-                <code>{data.getStartedCode.join('\n')}</code>
-              </div>
-              {/* Language */}
-              <div className="absolute bottom-20 right-20 leading-[1.125] text-gray-5a">{data.getStartedCodeLang}</div>
-            </pre>
-            <p className="text-center text-gray-aa">{data.getStartedCodeDocs}</p>
+          <div className="relative rounded-20 border border-gray-28 bg-soft-light py-40 pl-60 pr-30 backdrop-blur lg:px-60">
+            <ol style={{ counterReset: 'list' }} className="leading-2000 mb-30">
+              {data.getStartedSteps.map((step, stepIdx) => (
+                <li key={stepIdx}>
+                  <span
+                    style={{ counterIncrement: 'list' }}
+                    className="absolute left-30 text-right font-700 text-gray-aa before:content-[counter(list)_'.']"
+                  />
+                  <MDXRemote
+                    source={step}
+                    components={{
+                      code: (props) => {
+                        // @ts-expect-error MDXRemote doesn't know data attributes
+                        const isCodeBlock = !!props['data-language'];
+                        return (
+                          <code
+                            className={clsx(
+                              !isCodeBlock && 'leading-2500 relative inline-block px-10 font-mono text-16'
+                            )}
+                          >
+                            {!isCodeBlock && (
+                              <span className="bg-gray-23 inset-y-4 absolute inset-x-0 -z-10 rounded-4" />
+                            )}
+                            {props.children}
+                          </code>
+                        );
+                      },
+                      pre: ({ children }) => (
+                        <pre className="mt-4 bg-gray-23 overflow-x-scroll rounded-4 px-10 py-15 text-16 leading-1750">
+                          {children}
+                        </pre>
+                      ),
+                    }}
+                    options={{ mdxOptions: { rehypePlugins: [rehypePrettyCode] } }}
+                  />
+                </li>
+              ))}
+            </ol>
+            <MDXRemote
+              source={data.getStartedCodeDocs}
+              components={{
+                p: ({ children }) => <p className="text-gray-aa">{children}</p>,
+                a: ({ children, href }) => (
+                  <Link
+                    className="text-white underline underline-offset-2 hover:no-underline focus-visible:no-underline"
+                    href={href ?? '/'}
+                  >
+                    {children}
+                  </Link>
+                ),
+              }}
+            />
           </div>
         </div>
       </section>
@@ -215,7 +261,20 @@ export default function Page() {
             <h2 className="mb-30 text-center text-32 font-800 -tracking-2 supports-clamp:text-clamp-h2-alt md:text-left">
               {data.infrastructureTitle}
             </h2>
-            <p className="text-center text-gray-aa md:text-left">{data.infrastructureText}</p>
+            <MDXRemote
+              source={data.infrastructureText}
+              components={{
+                p: ({ children }) => <p className="text-center text-gray-aa md:text-left">{children}</p>,
+                a: ({ children, href }) => (
+                  <Link
+                    className="text-white underline underline-offset-2 hover:no-underline focus-visible:no-underline"
+                    href={href ?? '/'}
+                  >
+                    {children}
+                  </Link>
+                ),
+              }}
+            />
           </div>
           <div className="flex shrink-0 flex-col items-center justify-center gap-40">
             {data.infrastructureLogos.map(({ href, title, logo, comingSoon }, logoIdx) =>

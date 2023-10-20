@@ -1,4 +1,3 @@
-import type { Metadata } from 'next';
 import { DM_Sans, JetBrains_Mono } from 'next/font/google';
 import Link from 'next/link';
 
@@ -20,10 +19,13 @@ function getWebHost() {
   return undefined;
 }
 
-export const metadata: Metadata = {
+export const metadata = {
   metadataBase: getWebHost(),
   themeColor: 'black',
-  title: 'next-video',
+  title: {
+    template: '%s | next-video',
+    default: 'next-video',
+  },
   description:
     'Next Video solves the hard problems with embedding, storing, streaming, and customizing video in your Next.js app.',
 };
@@ -85,7 +87,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <ul>
                 {column.items.map((item, itemIdx) => (
                   <li key={itemIdx} className="mb-10">
-                    <Link className="leading-1330 hover:underline focus-visible:underline" href={item.href}>
+                    <Link
+                      className="leading-1330 underline-offset-2 hover:underline focus-visible:underline"
+                      href={item.href}
+                    >
                       {item.text}
                     </Link>
                   </li>
