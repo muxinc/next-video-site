@@ -1,5 +1,5 @@
 import { MDXRemote } from 'next-mdx-remote/rsc';
-import Video from 'next-video';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 
 import clsx from 'clsx';
@@ -14,6 +14,8 @@ import { data } from 'app/(home)/page';
 import theme from 'app/_code/theme';
 
 import TableOfContents from './TableOfContents';
+
+const Video = dynamic(() => import('next-video'));
 
 export const metadata = {
   title: 'Docs',
