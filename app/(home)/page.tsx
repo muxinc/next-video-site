@@ -100,7 +100,7 @@ export const data = {
       'Learn how Next Video solves the hard problems with embedding, storing, streaming, and customizing video in your Next.js app.',
   },
   getStartedSteps: [
-    '`npx next-video init` to install',
+    '`npx next-video init` to get started',
     // todo: this step can be reduced once npx next-video sync --watch is added to the dev script automatically
     '`npx next-video sync` to upload videos from your `/videos` folder',
     `Add the component to your app
