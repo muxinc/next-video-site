@@ -46,6 +46,7 @@ const config: Config = {
       },
       white: '#fff',
       pink: {
+        10: '#210B18',
         25: '#451632',
         neon: '#fb68ec',
         DEFAULT: '#fa50b5',

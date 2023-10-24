@@ -6,7 +6,14 @@ export function getTableOfContents(content: string) {
   const regexp = new RegExp(/^(### |## )(.*)\n/, 'gm');
   const headings = Array.from(content.matchAll(regexp));
 
-  let tableOfContents: Array<Section> = [];
+  let tableOfContents: Array<Section> = [
+    {
+      title: 'Introduction',
+      level: 'h2',
+      slug: 'main',
+      subsections: [],
+    },
+  ];
 
   if (headings.length) {
     let previousSection: Section | null = null;
