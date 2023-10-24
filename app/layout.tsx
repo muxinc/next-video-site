@@ -72,7 +72,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         className={clsx(
           dmSans.variable,
           jetBrainsMono.variable,
-          'overflow-x-clip bg-black px-30 font-sans text-18 text-white antialiased accent-pink sm:px-50'
+          'overflow-x-clip bg-black px-30 font-sans text-18 text-white antialiased accent-pink selection:bg-pink/50 selection:text-white sm:px-50'
         )}
         style={{ minWidth: '20rem' }}
       >
