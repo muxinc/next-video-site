@@ -19,7 +19,7 @@ const GridBackground = ({ inset, blur, xRange, yRange }: Props) => (
   <div
     className={clsx(
       'absolute -z-10',
-      '[--spotlight-color:theme(colors.pink.DEFAULT/35%)] peer-hover:[--spotlight-color:theme(colors.pink.DEFAULT/50%)] peer-focus-visible:[--spotlight-color:theme(colors.pink.DEFAULT/50%)]',
+      '[--spotlight-color:theme(colors.pink.DEFAULT/60%)] peer-hover:[--spotlight-color:theme(colors.pink.DEFAULT/75%)] peer-focus-visible:[--spotlight-color:theme(colors.pink.DEFAULT/75%)]',
       '[--spotlight-duration:1000ms] peer-hover:[--spotlight-duration:500ms] peer-focus-visible:[--spotlight-duration:500ms]'
     )}
     style={{
