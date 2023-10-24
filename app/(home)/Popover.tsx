@@ -18,8 +18,10 @@ const Popover = ({ text, label, children, className }: Props) => {
       </PopoverLib.Trigger>
       <PopoverLib.Portal>
         <PopoverLib.Content
-          side="right"
+          side="top"
           sideOffset={5}
+          avoidCollisions
+          collisionPadding={5}
           className="flex rounded-4 border border-gray-28 bg-black text-16"
         >
           <PopoverLib.Close aria-label="Close" className="px-10 py-5">
