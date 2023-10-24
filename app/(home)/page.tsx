@@ -256,7 +256,7 @@ export default function Page() {
                 p: ({ children }) => <p className="text-gray-aa">{children}</p>,
                 a: ({ children, href }) => (
                   <Link
-                    className="text-white underline underline-offset-2 hover:no-underline focus-visible:no-underline"
+                    className="text-white underline hover:no-underline focus-visible:no-underline"
                     href={href ?? '/'}
                   >
                     {children}
@@ -280,7 +280,7 @@ export default function Page() {
                 p: ({ children }) => <p className="text-center text-gray-aa md:text-left">{children}</p>,
                 a: ({ children, href }) => (
                   <Link
-                    className="text-white underline underline-offset-2 hover:no-underline focus-visible:no-underline"
+                    className="text-white underline hover:no-underline focus-visible:no-underline"
                     href={href ?? '/'}
                   >
                     {children}

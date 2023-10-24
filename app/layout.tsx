@@ -80,7 +80,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <footer className="mx-auto mb-200 grid max-w-1180 grid-cols-1 gap-x-20 gap-y-60 text-center md:grid-cols-3 md:text-left xl:grid-cols-5">
           <div className="col-span-full whitespace-nowrap xl:col-span-2">
             <Link href="/" className="group inline-block">
-              <code className="group-hover:bg-pink-10 group-focus-visible:bg-pink-10 mb-10 inline-block rounded-4 bg-pink-25 px-10 font-mono text-16 leading-1750 text-pink transition-colors">
+              <code className="mb-10 inline-block rounded-4 bg-pink-25 px-10 font-mono text-16 leading-1750 text-pink transition-colors group-hover:bg-pink-10 group-focus-visible:bg-pink-10">
                 next-video
               </code>
             </Link>
@@ -94,10 +94,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <ul>
                 {column.items.map((item, itemIdx) => (
                   <li key={itemIdx} className="mb-10">
-                    <Link
-                      className="leading-1330 underline-offset-2 hover:underline focus-visible:underline"
-                      href={item.href}
-                    >
+                    <Link className="leading-1330 hover:underline focus-visible:underline" href={item.href}>
                       {item.text}
                     </Link>
                   </li>

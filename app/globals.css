@@ -7,3 +7,10 @@
     @apply scroll-mt-60;
   }
 }
+
+@layer utilities {
+  .underline {
+    text-underline-offset: 0.25em;
+    text-decoration-thickness: 0.0625em;
+  }
+}

@@ -52,7 +52,7 @@ export default function TableOfContentsClient({ toc }: Props) {
           >
             {'>'}
           </div>
-          <a href={`#${section.slug}`} className="font-700 underline-offset-2 hover:underline focus-visible:underline">
+          <a href={`#${section.slug}`} className="font-700 hover:underline focus-visible:underline">
             {section.title}
           </a>
           {section.subsections.length ? (

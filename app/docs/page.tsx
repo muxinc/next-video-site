@@ -46,7 +46,7 @@ export default async function Readme() {
         <div className="lg:sticky lg:top-100 lg:max-h-[calc(100vh-theme(spacing.100))] lg:overflow-y-scroll">
           <h1 className="mb-80 inline-flex items-center gap-15 whitespace-nowrap font-mono text-16 leading-1750 lg:mb-100">
             <Link href="/" className="group inline-block">
-              <code className="group-hover:bg-pink-10 group-focus-visible:bg-pink-10 inline-block rounded-4 bg-pink-25 px-15 py-10 text-pink transition-colors">
+              <code className="inline-block rounded-4 bg-pink-25 px-15 py-10 text-pink transition-colors group-hover:bg-pink-10 group-focus-visible:bg-pink-10">
                 next-video
               </code>
             </Link>
@@ -96,10 +96,7 @@ export default async function Readme() {
             ),
             p: ({ children }) => <p className="mb-40 last:mb-0">{children}</p>,
             a: ({ children, href }) => (
-              <Link
-                href={href ?? '/'}
-                className="underline underline-offset-2 hover:no-underline focus-visible:no-underline"
-              >
+              <Link href={href ?? '/'} className="underline hover:no-underline focus-visible:no-underline">
                 {children}
               </Link>
             ),
