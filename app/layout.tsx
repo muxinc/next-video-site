@@ -55,7 +55,7 @@ const data = {
         {
           text: (
             <>
-              Vercel <span className="whitespace-nowrap">(application hosting)</span>
+              Vercel <span className="whitespace-nowrap">(Frontend Cloud)</span>
             </>
           ),
           href: 'https://www.vercel.com/',
