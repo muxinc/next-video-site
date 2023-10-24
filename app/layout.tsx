@@ -80,7 +80,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <footer className="mx-auto mb-200 grid max-w-1180 grid-cols-1 gap-x-20 gap-y-60 text-center md:grid-cols-3 md:text-left xl:grid-cols-5">
           <div className="col-span-full whitespace-nowrap xl:col-span-2">
             <Link href="/" className="group inline-block">
-              <code className="group-hover:bg-pink-10 group-focus-visible:bg-pink-10 mb-10 inline-block rounded-4 bg-pink-25 px-10 text-pink transition-colors">
+              <code className="group-hover:bg-pink-10 group-focus-visible:bg-pink-10 mb-10 inline-block rounded-4 bg-pink-25 px-10 font-mono text-16 leading-1750 text-pink transition-colors">
                 next-video
               </code>
             </Link>
