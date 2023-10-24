@@ -13,11 +13,12 @@ type Props = {
 export default function TableOfContentsClient({ toc }: Props) {
   const [activeId, setActiveId] = useState<string>('');
   useEffect(() => {
-    const headings = Array.from(document.querySelectorAll('h2,h3'));
+    const headings = Array.from(document.querySelectorAll('h2,h3')).filter((heading) => heading.id);
     // keep a list of where the headings are in the document, updating it on resize
-    let headingRects: DOMRect[] = [];
+    let headingTops: number[] = [];
     const onResize = () => {
-      headingRects = headings.map((heading) => heading.getBoundingClientRect());
+      const windowScrollY = window.scrollY;
+      headingTops = headings.map((heading) => heading.getBoundingClientRect().top + windowScrollY);
     };
     onResize();
     const throttledResize = throttle(onResize, 100, { trailing: true });
@@ -25,7 +26,7 @@ export default function TableOfContentsClient({ toc }: Props) {
     // figure out which header most recently passed the top of the screen
     const onScroll = () => {
       const scrollTop = window.scrollY;
-      const activeIdx = headingRects.findIndex((rect) => rect.top - 61 > scrollTop);
+      const activeIdx = headingTops.findIndex((top) => top - 61 > scrollTop);
       setActiveId(headings[activeIdx - 1]?.id ?? 'main');
     };
     onScroll();
