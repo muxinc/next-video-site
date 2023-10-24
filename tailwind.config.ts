@@ -109,6 +109,7 @@ const config: Config = {
       ],
     },
     fontSize: {
+      14: ['0.875rem', { lineHeight: '1.5' }],
       16: ['1rem', { lineHeight: '1.5' }],
       18: ['1.125rem', { lineHeight: '1.556' }],
       21: ['1.3125rem', { lineHeight: '1.5' }],
