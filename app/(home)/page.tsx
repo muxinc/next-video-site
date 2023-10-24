@@ -140,7 +140,7 @@ export default function Page() {
           components={{
             p: ({ children }) => <p className="mb-10 text-18 supports-clamp:text-clamp-sub md:mb-30">{children}</p>,
             code: ({ children }) => (
-              <code className="bg-pink-25 rounded-4 px-10 font-mono text-16 leading-1750 text-pink supports-clamp:text-clamp-sub-mono">
+              <code className="rounded-4 bg-pink-25 px-10 font-mono text-16 leading-1750 text-pink supports-clamp:text-clamp-sub-mono">
                 {children}
               </code>
             ),
@@ -201,7 +201,7 @@ export default function Page() {
             </div>
           </div>
           <div className="relative rounded-20 border border-gray-28 bg-soft-light px-30 py-40 backdrop-blur lg:px-60">
-            <ol style={{ counterReset: 'list' }} className="leading-2000 mb-30">
+            <ol style={{ counterReset: 'list' }} className="mb-30 leading-2000">
               {data.getStartedSteps.map((step, stepIdx) => (
                 <li key={stepIdx} className="mb-30 lg:mb-0">
                   <span
@@ -217,18 +217,18 @@ export default function Page() {
                         return (
                           <code
                             className={clsx(
-                              !isCodeBlock && 'leading-2500 relative inline-block px-10 font-mono text-16'
+                              !isCodeBlock && 'relative inline-block px-10 font-mono text-16 leading-2500'
                             )}
                           >
                             {!isCodeBlock && (
-                              <span className="bg-gray-23 inset-y-4 absolute inset-x-0 -z-10 rounded-4" />
+                              <span className="absolute inset-x-0 inset-y-4 -z-10 rounded-4 bg-gray-23" />
                             )}
                             {props.children}
                           </code>
                         );
                       },
                       pre: ({ children }) => (
-                        <pre className="mt-4 bg-gray-23 overflow-x-scroll rounded-4 px-10 py-15 text-16 leading-1750">
+                        <pre className="mt-4 overflow-x-scroll rounded-4 bg-gray-23 px-10 py-15 text-16 leading-1750">
                           {children}
                         </pre>
                       ),
@@ -269,7 +269,7 @@ export default function Page() {
       </section>
       <section className="relative mx-auto my-120 max-w-980 md:my-200">
         <GridBackground xRange={20} yRange={10} inset="-50px -100px" blur={150} />
-        <div className="flex flex-col items-center gap-60 rounded-20 bg-black px-30 py-60 md:flex-row md:gap-100 md:px-60 lg:px-100">
+        <div className="min-h-380 flex flex-col items-center gap-60 rounded-20 bg-black px-30 py-60 md:flex-row md:gap-100 md:px-60 lg:px-100">
           <div>
             <h2 className="mb-30 text-center text-32 font-800 -tracking-2 supports-clamp:text-clamp-h2-alt md:text-left">
               {data.infrastructureTitle}

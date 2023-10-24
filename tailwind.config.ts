@@ -165,6 +165,9 @@ const config: Config = {
       980: '61.25rem',
       1180: '73.75rem',
     },
+    minHeight: {
+      380: '23.75rem',
+    },
     spacing: {
       0: '0',
       2: '0.125rem',
