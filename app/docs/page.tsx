@@ -20,10 +20,10 @@ export const metadata = {
   title: 'Docs',
 };
 
-export const revalidate = 900;
-
 export default async function Readme() {
-  const res = await fetch('https://raw.githubusercontent.com/muxinc/next-video/main/README.md');
+  const res = await fetch('https://raw.githubusercontent.com/muxinc/next-video/main/README.md', {
+    next: { revalidate: 900 },
+  });
   const markdown = await res.text();
 
   return (

@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import clsx from 'clsx';
 
+import Contributors from './_components/Contributors';
 import './globals.css';
 
 const dmSans = DM_Sans({ subsets: ['latin'], variable: '--sans' });
@@ -80,11 +81,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <footer className="mx-auto mb-200 grid max-w-1180 grid-cols-1 gap-x-20 gap-y-60 text-center md:grid-cols-3 md:text-left xl:grid-cols-5">
           <div className="col-span-full whitespace-nowrap xl:col-span-2">
             <Link href="/" className="group inline-block">
-              <code className="mb-10 inline-block rounded-4 bg-pink-25 px-10 font-mono text-16 leading-1750 text-pink transition-colors group-hover:bg-pink-10 group-focus-visible:bg-pink-10">
+              <code className="mb-50 inline-block rounded-4 bg-pink-25 px-10 font-mono text-16 leading-1750 text-pink transition-colors group-hover:bg-pink-10 group-focus-visible:bg-pink-10">
                 next-video
               </code>
             </Link>
-            <p>{data.footerCallout}</p>
+            <p className="mb-10">{data.footerCallout}</p>
+            <Contributors />
           </div>
           {data.footerColumns.map((column, columnIdx) => (
             <div key={columnIdx}>
