@@ -189,7 +189,8 @@ export default function Page() {
         <div className="grid grid-cols-1 gap-x-20 gap-y-15 md:grid-cols-2">
           <div className="overflow-hidden rounded-20 border border-gray-28 bg-soft-light backdrop-blur">
             <div className="leading-0">
-              <Video src={data.getStartedVideo} accentColor="#fa50b5" poster="https://placehold.co/1280x720" />
+              {/* @ts-expect-error 0.8 has a bug where as prop isn't marked as optional */}
+              <Video src={data.getStartedVideo} accentColor="#fa50b5" />
             </div>
             <div className="p-30">
               <h3 className="mb-10 text-18 font-800 -tracking-2 [text-wrap:balance] supports-clamp:text-clamp-sub">

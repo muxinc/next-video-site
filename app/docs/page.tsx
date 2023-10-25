@@ -58,6 +58,7 @@ export default async function Readme() {
       {/* content column */}
       <main className="max-w-700 [text-wrap:pretty]" id="main">
         <div className="-mx-15 mb-80 flex overflow-hidden rounded-20 leading-0 sm:-mx-20 xl:-mx-40">
+          {/* @ts-expect-error 0.8 has a bug where as prop isn't marked as optional */}
           <Video src={data.getStartedVideo} accentColor="#fa50b5" className="h-auto w-full" />
         </div>
         <VideoLDJson
