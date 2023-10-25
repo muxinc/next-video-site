@@ -159,7 +159,7 @@ export default function Page() {
           >
             Documentation
           </Link>
-          <GridBackground xRange={20} yRange={25} blur={100} />
+          <GridBackground xRange={20} yRange={35} blur={100} />
         </div>
       </section>
       <section className="mx-auto max-w-1180">
@@ -268,8 +268,8 @@ export default function Page() {
         </div>
       </section>
       <section className="relative mx-auto my-120 max-w-980 md:my-200">
-        <GridBackground xRange={20} yRange={10} inset="-50px -100px" blur={150} />
-        <div className="min-h-380 flex flex-col items-center gap-60 rounded-20 bg-black px-30 py-60 md:flex-row md:gap-100 md:px-60 lg:px-100">
+        <GridBackground xRange={20} yRange={15} inset="-50px -100px" blur={150} />
+        <div className="flex min-h-380 flex-col items-center gap-60 rounded-20 bg-black px-30 py-60 md:flex-row md:gap-100 md:px-60 lg:px-100">
           <div>
             <h2 className="mb-30 text-center text-32 font-800 -tracking-2 supports-clamp:text-clamp-h2-alt md:text-left">
               {data.infrastructureTitle}
