@@ -32,67 +32,66 @@ export const data = {
   heroTitle: 'Add high-performance video to your Next.js app',
   heroSub: '`next-video` solves the hard problems with embedding, storing, streaming, and customizing video.',
   featuresTitle: 'What’s included',
-  featuresSub: 'Everything you need to stream video like a pro.',
+  featuresSub: 'Everything you need to add beautiful video to your Next.js application',
   features: [
     {
       icon: iconStorage,
       iconAlt: 'Storage icon',
       title: 'Off-repo storage',
-      text: 'Automatically transfer local videos outside of your repo to avoid repo storage limits and slow repo cloning',
+      text: 'Local videos are transferred outside of your version control system to avoid storage limits and slow cloning.',
     },
     {
       icon: iconStreaming,
       iconAlt: 'Streaming icon',
       title: 'Optimized video streaming',
-      text: 'Automatically convert and compress videos for high performance, cost-effective video delivery',
+      text: 'Videos are converted and compressed for highly-performant, cost-effective video delivery.',
     },
     {
       icon: iconPlayer,
       iconAlt: 'Player icon',
       title: 'BYO player, or don’t',
-      text: 'Use the built-in, react friendly and customizable video player or go fully custom with your own player without losing the video optimization.',
+      text: 'The built-in video player is customizable and accessible. Or you can bring your own player.',
     },
     {
       icon: iconAdaptive,
       iconAlt: 'Adaptive icon',
       title: 'Adaptive streaming',
-      text: 'Prevent buffering and poor experiences on slow networks by automatically creating multiple sizes of the video.',
+      text: 'Prevents buffering and poor experiences on slow networks by creating multiple sizes of the video.',
     },
     {
       icon: iconPlaceholder,
       iconAlt: 'Placeholder icon',
       title: 'Placeholder posters',
-      text: 'Zero-config poster frames and BlurHash images for faster perceived player load times',
+      text: 'Prevents layout shift and improves perceived load times with placeholder images',
     },
     {
       icon: iconTimeline,
       iconAlt: 'Timeline icon',
       title: 'Timeline hover thumbnails',
-      text: 'Automatically generate the images needed for previewing other parts of the video while hovering over the video progress bar.',
-    },
-    {
-      icon: iconAI,
-      iconAlt: 'AI icon',
-      title: 'AI captions & subtitles',
-      text: 'Add better accessibility to all your videos through Whisper-powered transcriptions and translations.',
+      text: 'Generates the images needed for previewing other parts of the video while hovering over the video progress bar.',
     },
     {
       icon: iconFormats,
       iconAlt: 'Formats icon',
       title: 'File formats solved',
-      text: 'Convert any source file to cross-browser and cross-device compatible formats',
+      text: 'Converts any source file to cross-browser compatible formats.',
+    },
+    {
+      icon: iconAI,
+      iconAlt: 'AI icon',
+      title: 'AI captions & subtitles',
+      text: 'Coming soon, add better accessibility to all your videos by enabling Whisper-powered transcriptions and translations.',
     },
     {
       icon: iconAnalytics,
       iconAlt: 'Analytics icon',
       title: 'Analytics built-in (optional)',
-      text: 'See how often videos get watched and track video performance',
+      text: 'See how often videos get watched and track video performance.',
     },
   ],
   getStartedTitle: 'Get started fast',
-  getStartedVideoTitle: 'Watch a quick overview',
-  getStartedVideoSub:
-    'Follow along as Darius Cepulis, Senior Experience Engineer at Mux, walks through the initial setup and potential pitfalls.',
+  getStartedVideoTitle: 'Follow the video tutorial',
+  getStartedVideoSub: 'Watch a quick walkthrough video showing how to set up and use next-video',
   getStartedVideo: placeholderVideo,
   getStartedVideoMetadata: {
     title: 'Intro to next-video',
@@ -101,12 +100,11 @@ export const data = {
   },
   getStartedSteps: [
     '`npx next-video init` to get started',
-    // todo: this step can be reduced once npx next-video sync --watch is added to the dev script automatically
-    '`npx next-video sync` to upload videos from your `/videos` folder',
+    'Add a video to your `/videos` folder',
     `Add the component to your app
 \`\`\`jsx
 import Video from 'next-video';
-import myVideo from '/videos/myVideo.mp4'; 
+import myVideo from '/videos/my-video.mp4'; 
 
 export default function Page() { 
    return <Video src={myVideo} />;
@@ -132,7 +130,7 @@ export default function Page() {
 export default function Page() {
   return (
     <main className="pt-80 md:pt-100">
-      <section className="mx-auto max-w-780 text-center">
+      <section className="mx-auto max-w-780 text-center [text-wrap:balance]">
         <NextPlusVideoLogo priority className="mx-auto mb-30 md:mb-60" />
         <h1 className="mb-30 text-32 font-800 -tracking-2 supports-clamp:text-clamp-h1">{data.heroTitle}</h1>
         <MDXRemote
@@ -163,7 +161,7 @@ export default function Page() {
         </div>
       </section>
       <section className="mx-auto max-w-1180">
-        <header className="mb-60 text-center md:mb-100">
+        <header className="mb-60 text-center [text-wrap:balance] md:mb-100">
           <h2 className="text-center text-32 font-800 -tracking-2 supports-clamp:text-clamp-h2">
             {data.featuresTitle}
           </h2>
@@ -173,7 +171,7 @@ export default function Page() {
           {data.features.map((feature, featureIdx) => (
             <li
               key={featureIdx}
-              className="row-span-3 rounded-20 border border-gray-28 bg-soft-light px-30 py-40 supports-subgrid:grid supports-subgrid:grid-rows-subgrid"
+              className="row-span-3 rounded-20 border border-gray-28 bg-soft-light px-30 py-40 [text-wrap:pretty] supports-subgrid:grid supports-subgrid:grid-rows-subgrid"
             >
               <Image src={feature.icon} alt={feature.iconAlt} className="mb-20 supports-subgrid:mb-0" />
               <h3 className="mb-20 text-24 font-800 leading-1167 -tracking-2 supports-subgrid:mb-0">{feature.title}</h3>
@@ -183,7 +181,7 @@ export default function Page() {
         </ul>
       </section>
       <section className="mx-auto max-w-1180" id="get-started">
-        <header className="mb-60 mt-120 text-center md:mb-80 md:mt-200">
+        <header className="mb-60 mt-120 text-center [text-wrap:balance] md:mb-80 md:mt-200">
           <h2 className="text-center text-32 font-800 -tracking-2 supports-clamp:text-clamp-h2">
             {data.getStartedTitle}
           </h2>
@@ -194,13 +192,13 @@ export default function Page() {
               <Video src={data.getStartedVideo} accentColor="#fa50b5" />
             </div>
             <div className="p-30">
-              <h3 className="mb-10 text-18 font-800 -tracking-2 supports-clamp:text-clamp-sub">
+              <h3 className="mb-10 text-18 font-800 -tracking-2 [text-wrap:balance] supports-clamp:text-clamp-sub">
                 {data.getStartedVideoTitle}
               </h3>
-              <p className="text-gray-aa">{data.getStartedVideoSub}</p>
+              <p className="text-gray-aa [text-wrap:pretty]">{data.getStartedVideoSub}</p>
             </div>
           </div>
-          <div className="relative rounded-20 border border-gray-28 bg-soft-light px-30 py-40 backdrop-blur lg:px-60">
+          <div className="relative rounded-20 border border-gray-28 bg-soft-light px-30 py-40 backdrop-blur [text-wrap:pretty] lg:px-60">
             <ol style={{ counterReset: 'list' }} className="mb-30 leading-2000">
               {data.getStartedSteps.map((step, stepIdx) => (
                 <li key={stepIdx} className="mb-30 lg:mb-0">
@@ -270,8 +268,8 @@ export default function Page() {
       <section className="relative mx-auto my-120 max-w-980 md:my-200">
         <GridBackground xRange={20} yRange={15} inset="-50px -100px" blur={150} />
         <div className="flex min-h-380 flex-col items-center gap-60 rounded-20 bg-black px-30 py-60 md:flex-row md:gap-100 md:px-60 lg:px-100">
-          <div>
-            <h2 className="mb-30 text-center text-32 font-800 -tracking-2 supports-clamp:text-clamp-h2-alt md:text-left">
+          <div className="[text-wrap:pretty]">
+            <h2 className="mb-30 text-center text-32 font-800 -tracking-2 [text-wrap:balance] supports-clamp:text-clamp-h2-alt md:text-left">
               {data.infrastructureTitle}
             </h2>
             <MDXRemote
