@@ -20,7 +20,7 @@ import logoMux from 'app/(home)/_images/logo-mux-small.svg';
 import logoS3 from 'app/(home)/_images/logo-s3.svg';
 import theme from 'app/_code/theme';
 
-import placeholderVideo from 'videos/placeholder.mp4';
+import getStartedVideo from 'videos/get-started.mp4';
 
 import NextPlusVideoLogo from '../_components/NextPlusVideoLogo';
 import GridBackground from './GridBackground';
@@ -92,7 +92,7 @@ export const data = {
   getStartedTitle: 'Get started fast',
   getStartedVideoTitle: 'Follow the video tutorial',
   getStartedVideoSub: 'Watch a quick walkthrough video showing how to set up and use next-video',
-  getStartedVideo: placeholderVideo,
+  getStartedVideo,
   getStartedVideoMetadata: {
     title: 'Intro to next-video',
     description:
@@ -189,7 +189,7 @@ export default function Page() {
         <div className="grid grid-cols-1 gap-x-20 gap-y-15 md:grid-cols-2">
           <div className="overflow-hidden rounded-20 border border-gray-28 bg-soft-light backdrop-blur">
             <div className="leading-0">
-              <Video src={data.getStartedVideo} accentColor="#fa50b5" />
+              <Video src={data.getStartedVideo} accentColor="#fa50b5" poster="https://placehold.co/1280x720" />
             </div>
             <div className="p-30">
               <h3 className="mb-10 text-18 font-800 -tracking-2 [text-wrap:balance] supports-clamp:text-clamp-sub">
