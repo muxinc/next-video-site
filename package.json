@@ -20,7 +20,7 @@
     "just-throttle": "^4.2.0",
     "next": "^13.5.6",
     "next-mdx-remote": "^4.4.1",
-    "next-video": "^0.8.0",
+    "next-video": "^0.8.1",
     "react": "^18",
     "react-dom": "^18",
     "rehype-pretty-code": "^0.10.1",
