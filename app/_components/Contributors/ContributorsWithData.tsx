@@ -13,7 +13,7 @@ async function getContributors(): Promise<unknown> {
   return data;
 }
 
-export default async function Contributors() {
+export default async function ContributorsWithData() {
   const contributors = await getContributors();
   const isArray = Array.isArray(contributors);
   const isContributorsOverflow = isArray && contributors.length > 16;

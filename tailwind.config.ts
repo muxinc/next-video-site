@@ -180,6 +180,7 @@ const config: Config = {
       20: '1.25rem',
       30: '1.875rem',
       40: '2.5rem',
+      48: '3rem',
       50: '3.125rem',
       60: '3.75rem',
       80: '5rem',
