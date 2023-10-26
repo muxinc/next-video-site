@@ -16,8 +16,20 @@ import TableOfContents from './TableOfContents';
 
 const Video = dynamic(() => import('next-video'));
 
+const title = 'Docs | next-video';
 export const metadata = {
-  title: 'Docs',
+  title,
+  openGraph: {
+    title,
+    url: '/docs',
+    locale: 'en-US',
+    type: 'website',
+  },
+  twitter: {
+    title,
+    site: '@muxhq',
+    card: 'summary_large_image',
+  },
 };
 
 export default async function Readme() {

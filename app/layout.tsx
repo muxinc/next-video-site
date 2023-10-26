@@ -11,24 +11,37 @@ const jetBrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--mono' })
 
 function getWebHost() {
   if (process.env.NODE_ENV === 'development') {
-    return new URL(`http://localhost:${process.env.PORT || 3000}`);
+    return `http://localhost:${process.env.PORT || 3000}`;
   } else if (process.env.VERCEL_ENV === 'preview') {
-    return new URL(`https://${process.env.VERCEL_URL}`);
+    return `https://${process.env.VERCEL_URL}`;
   } else if (process.env.PRODUCTION_URL) {
-    return new URL(`https://${process.env.PRODUCTION_URL}`);
+    return `https://${process.env.PRODUCTION_URL}`;
   }
   return undefined;
 }
+const webHost = getWebHost();
 
+const title = 'next-video';
+const description =
+  'Next Video solves the hard problems with embedding, storing, streaming, and customizing video in your Next.js app.';
 export const metadata = {
-  metadataBase: getWebHost(),
+  metadataBase: webHost ? new URL(webHost) : undefined,
   themeColor: 'black',
-  title: {
-    template: '%s | next-video',
-    default: 'next-video',
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    url: '/',
+    locale: 'en-US',
+    type: 'website',
   },
-  description:
-    'Next Video solves the hard problems with embedding, storing, streaming, and customizing video in your Next.js app.',
+  twitter: {
+    title,
+    description,
+    site: '@muxhq',
+    card: 'summary_large_image',
+  },
 };
 
 const data = {
