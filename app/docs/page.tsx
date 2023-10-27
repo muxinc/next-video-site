@@ -42,7 +42,7 @@ export default async function Readme() {
     <div className="relative mx-auto my-80 grid max-w-700 grid-cols-1 justify-center gap-80 lg:my-100 lg:grid lg:max-w-1180 lg:grid-cols-[auto_minmax(0,1fr)] xl:gap-150">
       {/* blur effect */}
       <div
-        className="fixed top-0 -z-10 h-200 w-full animate-fade-in rounded-full bg-pink/50"
+        className="fixed left-0 top-0 -z-10 h-200 w-full animate-fade-in rounded-full bg-pink/50"
         style={{ filter: `blur(200px)` }}
       />
       {/* a11y skip nav */}
