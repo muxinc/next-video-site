@@ -88,7 +88,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           jetBrainsMono.variable,
           'overflow-x-clip bg-black px-30 font-sans text-18 text-white antialiased accent-pink selection:bg-pink/50 selection:text-white sm:px-50'
         )}
-        style={{ minWidth: '20rem' }}
+        style={{ minWidth: '20rem', colorScheme: 'dark' }}
       >
         {children}
         <footer className="mx-auto mb-200 grid max-w-1180 grid-cols-1 gap-x-20 gap-y-60 text-center md:grid-cols-3 md:text-left xl:grid-cols-5">

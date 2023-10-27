@@ -6,11 +6,16 @@
   body *[id] {
     @apply scroll-mt-60;
   }
-}
-
-@layer utilities {
+  /* by default, offset all underlines so they appear thinner and below descenders */
   .underline {
     text-underline-offset: 0.25em;
     text-decoration-thickness: 0.0625em;
+  }
+  /* Assume that users have a mechanism for vertical scroll, and hide the track that appears */
+  .overflow-y-scroll::-webkit-scrollbar{ 
+    display: none;
+  }
+  .overflow-y-scroll {
+    scrollbar-width: none;
   }
 }
