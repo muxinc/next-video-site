@@ -12,7 +12,7 @@
     text-decoration-thickness: 0.0625em;
   }
   /* Assume that users have a mechanism for vertical scroll, and hide the track that appears */
-  .overflow-y-scroll::-webkit-scrollbar{ 
+  .overflow-y-scroll::-webkit-scrollbar {
     display: none;
   }
   .overflow-y-scroll {
