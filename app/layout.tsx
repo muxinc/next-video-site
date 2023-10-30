@@ -26,7 +26,6 @@ const description =
   'Next Video solves the hard problems with embedding, storing, streaming, and customizing video in your Next.js app.';
 export const metadata = {
   metadataBase: webHost ? new URL(webHost) : undefined,
-  themeColor: 'black',
   title,
   description,
   openGraph: {
@@ -42,6 +41,11 @@ export const metadata = {
     site: '@muxhq',
     card: 'summary_large_image',
   },
+};
+
+export const viewport = {
+  themeColor: 'black',
+  colorScheme: 'dark',
 };
 
 const data = {
