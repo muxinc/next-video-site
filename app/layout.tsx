@@ -1,6 +1,7 @@
 import { DM_Sans, JetBrains_Mono } from 'next/font/google';
 import Link from 'next/link';
 
+import { Analytics } from '@vercel/analytics/react';
 import clsx from 'clsx';
 
 import Contributors from './_components/Contributors';
@@ -122,6 +123,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </div>
           ))}
         </footer>
+        <Analytics />
       </body>
     </html>
   );
