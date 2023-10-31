@@ -24,17 +24,23 @@ export default function TableOfContentsClient({ toc }: Props) {
     const throttledResize = throttle(onResize, 100, { trailing: true });
     window.addEventListener('resize', throttledResize);
     // figure out which header most recently passed the top of the screen
+    let scrollTimeout: ReturnType<typeof setTimeout>;
     const onScroll = () => {
       const scrollTop = window.scrollY;
       const activeIdx = headingTops.findIndex((top) => top - 61 > scrollTop);
       setActiveId(headings[activeIdx - 1]?.id ?? 'main');
+      // when smooth scrolling, we sometimes don't get great coordinates from the scroll event.
+      // let's wait a bit after scrolling to check if that's the case
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(onScroll, 100);
     };
     onScroll();
-    const throttledScroll = throttle(onScroll, 100, { trailing: true });
+    const throttledScroll = throttle(onScroll, 100);
     window.addEventListener('scroll', throttledScroll);
     return () => {
       throttledResize.cancel();
       throttledScroll.cancel();
+      clearTimeout(scrollTimeout);
       window.removeEventListener('resize', throttledResize);
       window.removeEventListener('scroll', throttledScroll);
     };
