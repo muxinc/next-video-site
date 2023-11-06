@@ -99,7 +99,7 @@ export const data = {
       'Learn how Next Video solves the hard problems with embedding, storing, streaming, and customizing video in your Next.js app.',
   },
   getStartedSteps: [
-    '`npx next-video init` to get started',
+    '`npx -y next-video init` to get started',
     'Add a video to your `/videos` folder',
     `Add the component to your app
 \`\`\`jsx
