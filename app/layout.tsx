@@ -22,7 +22,7 @@ function getWebHost() {
 }
 const webHost = getWebHost();
 
-const title = 'next-video';
+const title = 'Next.js video embedding with next-video';
 const description =
   'Next Video solves the hard problems with embedding, storing, streaming, and customizing video in your Next.js app.';
 export const metadata = {
