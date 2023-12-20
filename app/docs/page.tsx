@@ -137,6 +137,14 @@ export default async function Readme() {
                 {children}
               </pre>
             ),
+            table: ({ children }) => (
+              <div className="-mx-30 mb-40 overflow-x-scroll px-15 md:-mx-20 md:px-0 xl:-mx-40">
+                <table className="min-w-full border-collapse leading-1330">{children}</table>
+              </div>
+            ),
+            tr: ({ children }) => <tr className="border-b border-gray-28">{children}</tr>,
+            td: ({ children }) => <td className="px-10 py-5">{children}</td>,
+            th: ({ children }) => <th className="px-10 py-5 text-left">{children}</th>,
           }}
           options={{
             mdxOptions: {
