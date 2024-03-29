@@ -18,7 +18,10 @@ export function getTableOfContents(content: string) {
   if (headings.length) {
     let previousSection: Section | null = null;
     headings.forEach((heading) => {
-      const title = heading[2].trim();
+      let title = heading[2].trim();
+      // Remove Markdown links
+      title = title.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
+
       const level = heading[1].trim() === '##' ? 'h2' : 'h3';
       const slug = slugger.slug(title);
 
