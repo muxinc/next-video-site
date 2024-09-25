@@ -120,7 +120,7 @@ export default function Page() {
   getStartedCodeDocs: 'Or check out [the docs](/docs) for manual configuration.',
   infrastructureTitle: 'Built on high-performance video streaming infrastructure',
   infrastructureText:
-    'Plug in your own video infrastructure provider, or use the default provider, [Mux](https://www.mux.com/). Mux’s developer video tools are used on the largest streaming sites and live events in the world.',
+    'Plug in your own video infrastructure provider, or use the default provider, [Mux](https://www.mux.com/). Mux is a [video API](https://www.mux.com/video-api) for developers whose video tools are used on the largest streaming sites and live events in the world.',
   infrastructureLogos: [
     { logo: logoMux, title: 'Mux', href: 'https://www.mux.com/' },
     {
