@@ -27,7 +27,7 @@ const GridBackground = ({ inset, blur, xRange, yRange }: Props) => (
     }}
   >
     <Spotlight blur={blur} xRange={xRange} yRange={yRange} />
-    <div className="absolute -inset-200 bg-grid bg-20 bg-center" />
+    <div className="absolute -inset-200 bg-grid bg-20 bg-center opacity-25" />
   </div>
 );
 
