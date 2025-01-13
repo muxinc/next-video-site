@@ -18,6 +18,7 @@ import iconTimeline from 'app/(home)/_images/icon-timeline.svg';
 import logoBlob from 'app/(home)/_images/logo-blob.svg';
 import logoMux from 'app/(home)/_images/logo-mux-small.svg';
 import logoS3 from 'app/(home)/_images/logo-s3.svg';
+import logoVercel from 'app/(home)/_images/logo-vercel.svg';
 import theme from 'app/_code/theme';
 
 import getStartedVideo from 'videos/get-started.mp4';
@@ -26,7 +27,6 @@ import NextPlusVideoLogo from '../_components/NextPlusVideoLogo';
 import GridBackground from './GridBackground';
 
 const Video = dynamic(() => import('next-video'));
-const Popover = dynamic(() => import('./Popover'));
 
 export const data = {
   heroTitle: 'Add high-performance video to your Next.js app',
@@ -119,17 +119,14 @@ export default function Page() {
   ],
   getStartedCodeDocs: 'Or check out [the docs](/docs) for manual configuration.',
   infrastructureTitle: 'Built on high-performance video streaming infrastructure',
-  infrastructureText:
-    'Plug in your own video infrastructure provider, or use the default provider, [Mux](https://www.mux.com/). Mux is a [video API](https://www.mux.com/video-api) for developers whose video tools are used on the largest streaming sites and live events in the world.',
+  infrastructureText: `Plug in your own video infrastructure provider, or use the default provider, [Mux](https://www.mux.com/). Mux is a [video API](https://www.mux.com/video-api) for developers whose video tools are used on the largest streaming sites and live events in the world.
+
+
+Mux is now available on the [Vercel Marketplace](https://www.vercel). <LogoVercel />`,
   infrastructureLogos: [
     { logo: logoMux, title: 'Mux', href: 'https://www.mux.com/' },
-    {
-      logo: logoBlob,
-      title: 'Vercel Blob',
-      href: 'https://vercel.com/docs/storage/vercel-blob',
-      comingSoon: true,
-    },
-    { logo: logoS3, title: 'AWS S3', href: 'https://aws.amazon.com/s3/', comingSoon: true },
+    { logo: logoBlob, title: 'Vercel Blob', href: 'https://vercel.com/docs/storage/vercel-blob' },
+    { logo: logoS3, title: 'AWS S3', href: 'https://aws.amazon.com/s3/' },
   ],
 };
 
@@ -281,7 +278,9 @@ export default function Page() {
             <MDXRemote
               source={data.infrastructureText}
               components={{
-                p: ({ children }) => <p className="text-center text-gray-aa md:text-left">{children}</p>,
+                p: ({ children }) => (
+                  <p className="mb-30 text-center text-gray-aa last:mb-0 md:text-left">{children}</p>
+                ),
                 a: ({ children, href }) => (
                   <Link
                     className="text-white underline hover:no-underline focus-visible:no-underline"
@@ -290,21 +289,16 @@ export default function Page() {
                     {children}
                   </Link>
                 ),
+                LogoVercel: () => <Image src={logoVercel} alt="Vercel logo" className="ml-30 inline-block h-18" />,
               }}
             />
           </div>
           <div className="flex shrink-0 flex-col items-center justify-center gap-40">
-            {data.infrastructureLogos.map(({ href, title, logo, comingSoon }, logoIdx) =>
-              comingSoon ? (
-                <Popover key={logoIdx} text={`${title} coming soon`} label={`Show ${title} popover`}>
-                  <Image src={logo} alt={`${title} logo`} className="shrink-0" />
-                </Popover>
-              ) : (
-                <Link key={logoIdx} href={href}>
-                  <Image src={logo} alt={`${title} logo`} className="shrink-0" />
-                </Link>
-              )
-            )}
+            {data.infrastructureLogos.map(({ href, title, logo }, logoIdx) => (
+              <Link key={logoIdx} href={href}>
+                <Image src={logo} alt={`${title} logo`} className="shrink-0" />
+              </Link>
+            ))}
           </div>
         </div>
       </section>
