@@ -122,7 +122,7 @@ export default function Page() {
   infrastructureText: `Plug in your own video infrastructure provider, or use the default provider, [Mux](https://www.mux.com/). Mux is a [video API](https://www.mux.com/video-api) for developers whose video tools are used on the largest streaming sites and live events in the world.
 
 
-Mux is now available on the [Vercel Marketplace](https://www.vercel). <LogoVercel />`,
+Mux is now available on the [Vercel Marketplace](https://vercel.com/marketplace/mux). <LogoVercel />`,
   infrastructureLogos: [
     { logo: logoMux, title: 'Mux', href: 'https://www.mux.com/' },
     { logo: logoBlob, title: 'Vercel Blob', href: 'https://vercel.com/docs/storage/vercel-blob' },
